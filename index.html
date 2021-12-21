@@ -419,6 +419,47 @@ add_action('woocommerce_registration_redirect', 'ap_registration_redirect_wc', 2
                         <li>
                             <div>
                                 <span class="text">
+                                    Redirect Single Product page to shop page 
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">//Redirect Single Product page to shop page 
+add_action( 'wp', 'ap_redirect_product_pages', 99 );
+ 
+function ap_redirect_product_pages() {
+     
+    if ( is_product() ) {
+        wp_safe_redirect( home_url('/shop') );
+        exit;
+    } 
+}
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="text">
+                                    Customize Woocommerce Single product page using single-product.php
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">//Remove Link from Product
+
+remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
+ 
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="text">
                                     Logout from Woocommerce
                                 </span>
 
