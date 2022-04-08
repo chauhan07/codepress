@@ -1,90 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+
 body {
-    background: #000c0a;
+    font-family: 'Ubuntu', sans-serif;
 }
 
-.wordpressFunctionAP ul {
-    display: flex;
-    padding: 0;
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
     margin: 0;
-    flex-wrap: wrap;
+}
+
+.wrapper {
+    background: #ffffff;
+    height: 100vh;
+    display: flex;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
 }
 
-.wordpressFunctionAP ul li {
-    list-style: none;
-    padding: 0px 10px;
-    width: 100%;
-    margin-bottom: 20px;
+.ap_player {
+    width: 400px;
+    max-width: 100%;
+    background: #f1f3f4;
+    padding: 20px 30px;
+    padding-bottom: 100px;
+    margin: 0 auto;
+    border-radius: 35px;
+    box-shadow: 4px 4px 12px rgb(228 226 235 / 72%);
+    position: relative;
+    overflow: hidden;
 }
 
-.wordpressFunctionAP ul li div {
-    background: #e6f7f4;
-    margin-bottom: 20px;
-    padding: 15px 15px;
-    word-break: break-all;
-    display: flex;
-    flex-direction: column;
-    font-size: 14px;
-    height: 100%;
+.ap_top_bar {
+    position: relative;
 }
 
-.wordpressFunctionAP ul li div span.text {
-    margin-bottom: 15px;
-    font-weight: bold;
+.backBtnFromPlayer {
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
-/* width */
-::-webkit-scrollbar {
-    height: 6px;
+.backBtnFromPlayer img {
+    width: 25px;
+    cursor: pointer;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #0db596;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
-
-.left .inner {
-    background: #e6f7f4;
-}
-
-.left .inner li:first-child {
-    background: #036e5b;
-    color: #fff;
-    padding: 12px 15px;
-    font-size: 18px;
-    margin-bottom: 0px;
-}
-
-.left .inner li {
-    padding:0px;
-    margin: 0;
-}
-
-.left .inner li a {
+.nowPlayingText {
+    color: #533b71;
     font-size: 16px;
-    padding: 12px 15px;
-    margin-bottom: 0;
+    text-align: center;
     display: block;
-    text-decoration: none;
-    color: #036e5b;
+    font-weight: 600;
 }
 
-.left .inner li a:hover{
-    background: #cfe9e4;
+.ap_currentSong_banner {
+    margin-top: 25px;
 }
 
-.right li{
-    scroll-margin-top:10px;
+.ap_currentSong_banner img {
+    width: 100%;
+    border-radius: 25px
+}
+
+.ap_currentSong_Name {
+    text-align: center;
+    margin: 25px 0px 10px;
+}
+
+.ap_currentSong_Name p {
+    font-size: 17px;
+    font-weight: 600;
+    color: #533b71;
+}
+
+.ap_currentSong_Name span {
+    font-size: 12px;
+    color: #533b71;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.ap_audioPlayer audio {
+    width: 100%;
+}
+
+.ap_upNext_song {
+    display: flex;
+    flex-wrap: wrap;
+    background: #e4e2eb;
+    border-radius: 8px;
+    padding: 10px 15px 12px;
+    margin-top: 15px;
+}
+
+.ap_upNext_song h5 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.ap_upNext_song figure {
+    width: 50px;
+}
+
+.ap_upNext_song figure img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+p.songName {
+    width: calc(100% - 60px);
+    padding-left: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 12px;
+}
+
+.ap_app_controls {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    background: #523872;
+    padding: 20px 0px;
+    box-shadow: 0px -4px 15px rgb(0 0 0 / 5%);
+}
+
+.ap_app_controls ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ap_app_controls ul li {
+    width: calc(100% / 4);
+    text-align: center;
+}
+
+.ap_app_controls ul li span {
+    cursor: pointer;
+}
+
+.ap_app_controls ul li img {
+    width: 25px;
+}
+
+@media screen and (max-width:500px){
+    .wrapper {
+        background: #f1f3f4;
+        padding: 0;
+    }
+    
+    .wrapper .container{
+        padding: 0;
+    }
+    
+    .ap_player {
+        width: 100%;
+        border-radius: 0;
+        box-shadow: unset;
+    }
+    
+    .ap_app_controls {
+        position: fixed;
+    }
 }
