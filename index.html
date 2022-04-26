@@ -314,6 +314,28 @@ function add_sub_menu_class($atts, $args, $depth) {
                         <li>
                             <div>
                                 <span class="text">
+                                    Add caret for submenus
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">// add caret for submenus
+function aiken_menu_arrow($item_output, $item, $depth, $args) {
+    if (in_array('menu-item-has-children', $item->classes)) {
+        $arrow = '&lt;span class="subMenuAngle"&gt; &lt;i class="fas fa-chevron-down"&gt;&lt;/i&gt;&lt;/span&gt;'; // Change the class to your font icon
+        $item_output = str_replace('&lt;/a&gt;', '&lt;/a&gt;'. $arrow .'', $item_output);
+    }
+    return $item_output;
+}
+add_filter('walker_nav_menu_start_el', 'aiken_menu_arrow', 10, 4);
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="text">
                                     Register Sidebar
                                 </span>
 
