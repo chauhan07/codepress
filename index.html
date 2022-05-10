@@ -497,6 +497,33 @@ https://github.com/chauhan07/custom-login-registration-woocomerce
                                 </span>
                             </div>
                         </li>
+                        <li>
+                            <div>
+                                <span class="text">
+                                    Remove links of single products from products listing 
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">/*** remove single products link ***/
+remove_action('woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10);
+remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5);
+
+/*** redirect single product page to shop page  ****/
+add_action('wp', 'ts_redirect_product_pages', 99);
+function ts_redirect_product_pages()
+{
+
+    if (is_product()) {
+        wp_safe_redirect(home_url('/shop'));
+        exit;
+    }
+}
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
 
                         <!-- ACF Related -->
                         <li id="acf">
