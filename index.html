@@ -386,6 +386,51 @@ add_shortcode( 'shortcode_name' , 'shortcode_function' );
                             </div>
                         </li>
 
+                        <li>
+                            <div>
+                                <span class="text">
+                                    Get categories of Custom Post
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">//Get categories of custom post 
+$args = array(
+'type'                     => 'casestudy',
+'child_of'                 => 0,
+'parent'                   => '',
+'orderby'                  => 'name',
+'order'                    => 'ASC',
+'hide_empty'               => 1,
+'hierarchical'             => 1,
+'taxonomy'                 => 'categories',
+'pad_counts'               => false );
+$categories = get_categories($args);
+
+<ul>
+    <li>
+        <a class="active" data-filter="*" href="javascript:void(0)">
+            All Market
+        </a>
+    </li>
+<?php 
+    foreach ($categories as $category) {
+        $url = get_term_link($category);?>
+        
+    <li>
+        <a class="active" data-filter=".<?php echo $url;?>" href="javascript:void(0)">
+            <?php echo $category->name; ?>
+        </a>
+    </li>
+
+<?php } ?>
+</ul>
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+
                         <!-- for woocommerce pages -->
                         <li id="woocmrc">
                             <div>
