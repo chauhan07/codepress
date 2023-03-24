@@ -545,7 +545,7 @@ https://github.com/chauhan07/custom-login-registration-woocomerce
                         <li>
                             <div>
                                 <span class="text">
-                                    Remove links of single products from products listing 
+                                    Remove links of single products from products listing
                                 </span>
 
                                 <span class="function">
@@ -564,6 +564,31 @@ function ts_redirect_product_pages()
         exit;
     }
 }
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="text">
+                                    Remove/Reduce Password Security
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">/*** reduce password security ***/
+function codepress_min_password_strength( $strength ) {
+    return 2;
+}
+add_filter( 'woocommerce_min_password_strength', 'codepress_min_password_strength', 10, 1 );
+
+/*** reduce password security ***/
+function codepress_remove_password_strength() {
+    wp_dequeue_script( 'wc-password-strength-meter' );
+}
+add_action( 'wp_print_scripts', 'codepress_remove_password_strength', 10 );
+
 </code>
                                 </pre>
                                 </span>
