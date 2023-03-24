@@ -460,6 +460,10 @@ div#mobileHamburger {
   }
 }
 
+.modal-body{
+    position: unset;
+}
+
 /*** media queries ***/
 
 @media screen and (max-width:1200px) {
