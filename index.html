@@ -164,12 +164,17 @@
                     </li>
                     <li data-topic="Register Custom Post">
                         <a href="javascript:void(0)" onclick="scrollToSection('an')">
-                            13. Register Custom Post
+                            13. Get Custom Post using wp-query
                         </a>
                     </li>
-                    <li data-topic="Register Custom Post">
+                    <li data-topic="Get Custom Post using wp-query">
                         <a href="javascript:void(0)" onclick="scrollToSection('ao')">
                             14. Get Custom Post using wp-query
+                        </a>
+                    </li>
+                    <li data-topic="Check is Valid Business Emails">
+                        <a href="javascript:void(0)" onclick="scrollToSection('ap')">
+                            15. Check is Valid Business Emails
                         </a>
                     </li>
 
@@ -243,6 +248,9 @@ add_theme_support( 'custom-logo', $defaults );
 
 //Add theme support of title tag
 add_theme_support( 'title-tag' );
+
+// Remove &lt;p&gt; and &lt;br/&gt; from Contact Form 7 (Contact form 7 automatically added paragraph and break tags)
+add_filter('wpcf7_autop_or_not', '__return_false');
 </code>
                                 </pre>
                                 </span>
@@ -1054,6 +1062,161 @@ if ($total_pages > 1){
         'next_text'    => __('next »'),
     ));
 }
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="ap">
+                            <div>
+                                <h3>
+                                    <span class="text">
+                                        # Code for only business emails are valid in contact forms
+                                    </span>
+                                </h3>
+
+                                <p class="topicDesc">
+                                    When creating a contact form on your website, it is important to ensure that the email addresses entered by users are valid and relevant to your business. One way to do this is by implementing code that only accepts business email addresses.
+                                    <br /><br />
+                                    Using code that restricts email addresses to only those belonging to a business domain can help reduce spam and prevent users from entering incorrect or irrelevant information. This can help streamline your communication with potential customers and ensure that you are only receiving inquiries from individuals who are genuinely interested in your products or services.
+                                    <br /><br />
+                                    Furthermore, implementing such code can improve the overall user experience on your website by reducing the likelihood of users receiving error messages or encountering technical difficulties when attempting to submit their contact information. This can improve the credibility and trustworthiness of your website, which can ultimately lead to increased engagement and conversions.
+                                    <br /><br />
+                                    In terms of search engine optimization (SEO), using code that restricts email addresses to business domains can help improve the quality of the leads you generate through your website. By only accepting valid business email addresses, you can ensure that the leads you receive are more likely to be relevant to your business and more likely to convert into customers. This can ultimately help improve your website's search engine rankings and drive more organic traffic to your site.
+                                </p>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">// Code for Valid Business Mails
+function is_business_email($email){
+	if(preg_match('/@hotmail.com/i', $email) ||
+		preg_match('/@gmail.com/i', $email) ||
+		preg_match('/@yahoo.co/i', $email) ||
+		preg_match('/@yahoo.com/i', $email) ||
+		preg_match('/@mailinator.com/i', $email) ||
+		preg_match('/@gmail.co.in/i', $email) ||
+		preg_match('/@aol.com/i', $email) ||
+		preg_match('/@yandex.com/i', $email) ||
+		preg_match('/@msn.com/i', $email) ||
+		preg_match('/@gawab.com/i', $email) ||
+		preg_match('/@inbox.com/i', $email) ||
+		preg_match('/@gmx.com/i', $email) ||
+		preg_match('/@rediffmail.com/i', $email) ||
+		preg_match('/@in.com/i', $email) ||
+		preg_match('/@live.com/i', $email) ||
+		preg_match('/@hotmail.co.uk/i', $email) ||
+		preg_match('/@hotmail.fr/i', $email) ||
+		preg_match('/@yahoo.fr/i', $email) ||
+		preg_match('/@wanadoo.fr/i', $email) ||
+		preg_match('/@wanadoo.fr/i', $email) ||
+		preg_match('/@comcast.net/i', $email) ||
+		preg_match('/@yahoo.co.uk/i', $email) ||
+		preg_match('/@yahoo.com.br/i', $email) ||
+		preg_match('/@yahoo.co.in/i', $email) ||
+		preg_match('/@rediffmail.com/i', $email) ||
+		preg_match('/@free.fr/i', $email) ||
+		preg_match('/@gmx.de/i', $email) ||
+		preg_match('/@gmx.de/i', $email) ||
+		preg_match('/@yandex.ru/i', $email) ||
+		preg_match('/@ymail.com/i', $email) ||
+		preg_match('/@libero.it/i', $email) ||
+		preg_match('/@outlook.com/i', $email) ||
+		preg_match('/@uol.com.br/i', $email) ||
+		preg_match('/@bol.com.br/i', $email) ||
+		preg_match('/@mail.ru/i', $email) ||
+		preg_match('/@cox.net/i', $email) ||
+		preg_match('/@hotmail.it/i', $email) ||
+		preg_match('/@sbcglobal.net/i', $email) ||
+		preg_match('/@sfr.fr/i', $email) ||
+		preg_match('/@live.fr/i', $email) ||
+		preg_match('/@verizon.net/i', $email) ||
+		preg_match('/@live.co.uk/i', $email) ||
+		preg_match('/@googlemail.com/i', $email) ||
+		preg_match('/@yahoo.es/i', $email) ||
+		preg_match('/@ig.com.br/i', $email) ||
+		preg_match('/@live.nl/i', $email) ||
+		preg_match('/@bigpond.com/i', $email) ||
+		preg_match('/@terra.com.br/i', $email) ||
+		preg_match('/@yahoo.it/i', $email) ||
+		preg_match('/@neuf.fr/i', $email) ||
+		preg_match('/@yahoo.de/i', $email) ||
+		preg_match('/@live.com/i', $email) ||
+		preg_match('/@yahoo.de/i', $email) ||
+		preg_match('/@rocketmail.com/i', $email) ||
+		preg_match('/@att.net/i', $email) ||
+		preg_match('/@laposte.net/i', $email) ||
+		preg_match('/@facebook.com/i', $email) ||
+		preg_match('/@bellsouth.net/i', $email) ||
+		preg_match('/@yahoo.in/i', $email) ||
+		preg_match('/@hotmail.es/i', $email) ||
+		preg_match('/@charter.net/i', $email) ||
+		preg_match('/@yahoo.ca/i', $email) ||
+		preg_match('/@yahoo.com.au/i', $email) ||
+		preg_match('/@rambler.ru/i', $email) ||
+		preg_match('/@hotmail.de/i', $email) ||
+		preg_match('/@tiscali.it/i', $email) ||
+		preg_match('/@shaw.ca/i', $email) ||
+		preg_match('/@yahoo.co.jp/i', $email) ||
+		preg_match('/@sky.com/i', $email) ||
+		preg_match('/@earthlink.net/i', $email) ||
+		preg_match('/@optonline.net/i', $email) ||
+		preg_match('/@freenet.de/i', $email) ||
+		preg_match('/@t-online.de/i', $email) ||
+		preg_match('/@aliceadsl.fr/i', $email) ||
+		preg_match('/@virgilio.it/i', $email) ||
+		preg_match('/@home.nl/i', $email) ||
+		preg_match('/@qq.com/i', $email) ||
+		preg_match('/@telenet.be/i', $email) ||
+		preg_match('/@me.com/i', $email) ||
+		preg_match('/@yahoo.com.ar/i', $email) ||
+		preg_match('/@tiscali.co.uk/i', $email) ||
+		preg_match('/@yahoo.com.mx/i', $email) ||
+		preg_match('/@gmx.net/i', $email) ||
+		preg_match('/@mail.com/i', $email) ||
+		preg_match('/@planet.nl/i', $email) ||
+		preg_match('/@tin.it/i', $email) ||
+		preg_match('/@live.it/i', $email) ||
+		preg_match('/@ntlworld.com/i', $email) ||
+		preg_match('/@arcor.de/i', $email) ||
+		preg_match('/@yahoo.co.id/i', $email) ||
+		preg_match('/@frontiernet.net/i', $email) ||
+		preg_match('/@hetnet.nl/i', $email) ||
+		preg_match('/@live.com.au/i', $email) ||
+		preg_match('/@yahoo.com.sg/i', $email) ||
+		preg_match('/@zonnet.nl/i', $email) ||
+		preg_match('/@club-internet.fr/i', $email) ||
+		preg_match('/@juno.com/i', $email) ||
+		preg_match('/@optusnet.com.au/i', $email) ||
+		preg_match('/@blueyonder.co.uk/i', $email) ||
+		preg_match('/@bluewin.ch/i', $email) ||
+		preg_match('/@skynet.be/i', $email) ||
+		preg_match('/@sympatico.ca/i', $email) ||
+		preg_match('/@windstream.net/i', $email) ||
+		preg_match('/@mac.com/i', $email) ||
+		preg_match('/@centurytel.net/i', $email) ||
+		preg_match('/@chello.nl/i', $email) ||
+		preg_match('/@live.ca/i', $email) ||
+		preg_match('/@aim.com/i', $email) ||
+		preg_match('/@bigpond.net.au/i', $email))
+	{
+		return false; // It's a publicly available email address
+	}
+	else{
+		return true; // It's probably a company email address
+	}
+}
+function custom_email_validation_filter($result, $tag) {
+	$tag = new WPCF7_Shortcode( $tag );
+	if ( 'email' == $tag->name ) {
+		$the_value = isset( $_POST['email'] ) ? trim( $_POST['email'] ) : "";
+		if(!is_business_email($the_value)){
+			$result->invalidate( $tag, "Please enter a valid business email" );
+		}
+	}
+	return $result;
+}
+add_filter( 'wpcf7_validate_email', 'custom_email_validation_filter', 10, 2 );
+add_filter( 'wpcf7_validate_email*', 'custom_email_validation_filter', 10, 2 );
 </code>
                                 </pre>
                                 </span>
