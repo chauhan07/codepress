@@ -28,7 +28,7 @@ function scrollToSection(sectionId) {
 }
 
 function formSubmitFun(event) {
-    alert("yes");
+    //alert("yes");
     let currentForm = document.forms['submit-to-google-sheet'];
     let loader = document.querySelector(".ap_loader");
     let successMsg = document.querySelector(".successMessage");
