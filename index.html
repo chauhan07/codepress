@@ -6,12 +6,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="./assets/images/fav.png">
-    
+
     <!-- meta tags -->
     <title>Codepress - Wordpress Code Snippets</title>
     <meta name="description" content="Find the most useful WordPress code snippets to help you build your website. Get easy-to-implement code solutions for common WordPress tasks, including customizing themes, adding functionality, and optimizing performance. Save time and improve your WordPress development with our collection of code snippets.">
     <link rel="canonical" href="https://chauhan07.github.io/codepress/">
     <meta name="robots" content="index,follow">
+
+    <!-- OG Tags -->
+    <meta property="og:title" content="Codepress - WordPress Code Snippets">
+    <meta property="og:description" content="Find the most useful WordPress code snippets to help you build your website. Get easy-to-implement code solutions for common WordPress tasks, including customizing themes, adding functionality, and optimizing performance. Save time and improve your WordPress development with our collection of code snippets.">
+
+    <meta property="og:image" content="https://chauhan07.github.io/codepress/">
+    <meta property="og:url" content="https://chauhan07.github.io/codepress/assets/images/og_image.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+
     <!-- Bootstrap CSS -->
     <link href="./assets/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="./assets/style.css" rel="stylesheet">
@@ -159,7 +169,7 @@
                     </li>
                     <li data-topic="Register Custom Post">
                         <a href="javascript:void(0)" onclick="scrollToSection('ao')">
-                            14. Get Custom Post using wp-query 
+                            14. Get Custom Post using wp-query
                         </a>
                     </li>
 
@@ -194,7 +204,7 @@
                                         # Basic Functions
                                     </span>
                                 </h3>
-                                
+
                                 <p class="topicDesc">
                                     We've listed some basic functions that can help you fetch content and perform other tasks in WordPress. Use these functions to streamline your website development and improve your overall WordPress experience.
                                 </p>
@@ -245,7 +255,7 @@ add_theme_support( 'title-tag' );
                                         # Get Logo on Frontend
                                     </span>
                                 </h3>
-                                
+
                                 <p class="topicDesc">
                                     With the following code, you can easily retrieve your logo on the frontend of your website. Improve your website's branding and user experience by displaying your logo prominently on your website.
                                 </p>
@@ -261,13 +271,13 @@ echo '&lt;img src="' . esc_url( $custom_logo_url ) . '" alt="Site Logo">';</code
                         </li>
                         <li id="ac">
                             <div>
-                                
+
                                 <h3>
                                     <span class="text">
                                         # Get Page Featured Image
                                     </span>
                                 </h3>
-                                
+
                                 <p class="topicDesc">
                                     With the following code you can easily retrieve the featured image for a page in WordPress with the following code. Display your page's featured image prominently on your website to improve your site's visual appeal and user experience. Implement this code to streamline your development process and enhance your website's functionality.
                                 </p>
@@ -289,7 +299,7 @@ endif;</code>
                                         # Get Blog Listing Featured Image
                                     </span>
                                 </h3>
-                                
+
                                 <p class="topicDesc">
                                     Retrieve the featured image for your WordPress blog listings with ease using the following code. Enhance your website's visual appeal and user experience by prominently displaying featured images for each blog post on your website. Simplify your development process and optimize your website's functionality with this useful code snippet.
                                 </p>
@@ -312,7 +322,7 @@ endif;</code>
                                         # Get categories on single post
                                     </span>
                                 </h3>
-                                
+
                                 <p class="topicDesc">
                                     With the following code, you can retrieve the categories for a single post in WordPress. Streamline your website's navigation and improve user experience by displaying relevant categories for each post. Implement this code to enhance your website's functionality and optimize your WordPress development process.
                                 </p>
@@ -338,7 +348,7 @@ foreach ( $terms as $term ) {
                                         # Get tags on single post
                                     </span>
                                 </h3>
-                                
+
                                 <p class="topicDesc">
                                     Retrieve the tags for a single post in WordPress with ease using the following code. Improve your website's navigation and user experience by displaying relevant tags for each post. Simplify your WordPress development process and enhance your website's functionality with this useful code snippet.
                                 </p>
@@ -364,7 +374,7 @@ foreach ( $terms as $term ) {
                                         # Adding Wordpress Menu
                                     </span>
                                 </h3>
-                                
+
                                 <p class="topicDesc">
                                     Retrieve a registered WordPress menu with ease using the following code. Display your menu on your website to improve navigation and user experience. Simplify your WordPress development process and enhance your website's functionality with this useful code snippet.
                                 </p>
@@ -396,12 +406,12 @@ wp_nav_menu(
                         </li>
                         <li id="ag1">
                             <div>
-                              <h3>
+                                <h3>
                                     <span class="text">
                                         # Add class in menu li.
                                     </span>
                                 </h3>
-                                
+
                                 <p class="topicDesc">
                                     Add a custom class to the li element in your WordPress menu with the following code. Enhance your website's design and user experience by customizing your menu with unique classes. Implement this code to optimize your WordPress development process and improve your website's functionality.
                                 </p>
@@ -432,10 +442,10 @@ function add_class_to_menu_list ( $classes, $item, $args, $depth ){
                             <div>
                                 <h3>
                                     <span class="text">
-                                       # Add class in menu anchor.
+                                        # Add class in menu anchor.
                                     </span>
                                 </h3>
-                                
+
                                 <p class="topicDesc">
                                     Add a custom class to the anchor element in your WordPress menu using the following code. Improve your website's design and user experience by customizing your menu with unique classes. Simplify your WordPress development process and enhance your website's functionality with this useful code snippet.
                                 </p>
@@ -461,10 +471,10 @@ function add_class_to_list_anchor($atts, $item, $args, $depth) {
                             <div>
                                 <h3>
                                     <span class="text">
-                                      # Overide Submenu Class
+                                        # Overide Submenu Class
                                     </span>
                                 </h3>
-                                
+
                                 <p class="topicDesc">
                                     Override the default submenu class in your WordPress menu with the following code. Customize your website's design and user experience by creating unique submenu classes. Implement this code to streamline your WordPress development process and optimize your website's functionality.
                                 </p>
@@ -489,10 +499,10 @@ function add_sub_menu_class($atts, $args, $depth) {
                             <div>
                                 <h3>
                                     <span class="text">
-                                      # Add caret for submenus
+                                        # Add caret for submenus
                                     </span>
                                 </h3>
-                                
+
                                 <p class="topicDesc">
                                     Add a caret to your WordPress submenu using the following code. Improve your website's navigation and user experience by providing a visual cue for submenus. Simplify your WordPress development process and enhance your website's functionality with this useful code snippet.
                                 </p>
@@ -517,10 +527,10 @@ add_filter('walker_nav_menu_start_el', 'aiken_menu_arrow', 10, 4);
                             <div>
                                 <h3>
                                     <span class="text">
-                                      # Register Sidebar
+                                        # Register Sidebar
                                     </span>
                                 </h3>
-                                
+
                                 <p class="topicDesc">
                                     With the following code, you can register a custom sidebar in WordPress. Customize your website's design and user experience by creating unique sidebars for specific pages or categories. Implement this code to optimize your WordPress development process and improve your website's functionality.
                                 </p>
@@ -551,10 +561,10 @@ if (is_active_sidebar('mail-widgets')) {
                             <div>
                                 <h3>
                                     <span class="text">
-                                      # Create Shorcode
+                                        # Create Shorcode
                                     </span>
                                 </h3>
-                                
+
                                 <p class="topicDesc">
                                     Create a custom shortcode in WordPress using the following code. Simplify your website development process by creating a shortcode that can be easily used throughout your website. Enhance your website's functionality and optimize your WordPress development process with this useful code snippet.
                                 </p>
@@ -628,10 +638,10 @@ $categories = get_categories($args);
                             <div>
                                 <h3>
                                     <span class="text">
-                                      # Get categories and subcategories of post
+                                        # Get categories and subcategories of post
                                     </span>
                                 </h3>
-                                
+
                                 <p class="topicDesc">
                                     Retrieve the categories and subcategories of a post in WordPress with the following code. Streamline your website's navigation and improve user experience by displaying relevant categories and subcategories for each post. Implement this code to enhance your website's functionality and optimize your WordPress development process.
                                 </p>
@@ -664,10 +674,10 @@ echo $html;
                             <div>
                                 <h3>
                                     <span class="text">
-                                      # Redirect after Login & Registration
+                                        # Redirect after Login & Registration
                                     </span>
                                 </h3>
-                                
+
                                 <p class="topicDesc">
                                     Redirect users to a specific page after login or registration with the following code. Enhance your website's user experience by providing a customized redirect page for your users. Implement this code to optimize your WordPress development process and improve your website's functionality.
                                 </p>
@@ -696,10 +706,10 @@ add_action('woocommerce_registration_redirect', 'ap_registration_redirect_wc', 2
                             <div>
                                 <h3>
                                     <span class="text">
-                                      # Custom Woocomerce Login
+                                        # Custom Woocomerce Login
                                     </span>
                                 </h3>
-                                
+
                                 <p class="topicDesc">
                                     Customize the login functionality of your WooCommerce store with the following code. Enhance your website's user experience and branding by customizing the WooCommerce login form. Implement this code to optimize your WordPress development process and improve your website's functionality.
                                 </p>
@@ -726,10 +736,10 @@ function jags_separate_login_form() {
                             <div>
                                 <h3>
                                     <span class="text">
-                                      # Custom Woocommerce Login & Register Form
+                                        # Custom Woocommerce Login & Register Form
                                     </span>
                                 </h3>
-                                
+
                                 <p class="topicDesc">
                                     Create a custom WooCommerce login and registration form with the following code. Improve your website's user experience and branding by creating a unique login and registration form. Simplify your WordPress development process and enhance your website's functionality with this useful code snippet.
                                 </p>
@@ -747,10 +757,10 @@ https://github.com/chauhan07/custom-login-registration-woocomerce
                             <div>
                                 <h3>
                                     <span class="text">
-                                      # Logout from Woocommerce
+                                        # Logout from Woocommerce
                                     </span>
                                 </h3>
-                                
+
                                 <p class="topicDesc">
                                     Allow users to log out from your WooCommerce store with the following code. Improve your website's user experience and security by providing a logout functionality for your users. Implement this code to optimize your WordPress development process and improve your website's functionality.
                                 </p>
@@ -768,10 +778,10 @@ https://github.com/chauhan07/custom-login-registration-woocomerce
                             <div>
                                 <h3>
                                     <span class="text">
-                                      # Remove links of single products from products listing
+                                        # Remove links of single products from products listing
                                     </span>
                                 </h3>
-                                
+
                                 <p class="topicDesc">
                                     Remove the links of single products from the products listing in WooCommerce with the following code. Customize the design of your product listing page by removing unwanted links. Implement this code to optimize your WordPress development process and improve your website's functionality.
                                 </p>
@@ -801,10 +811,10 @@ function ts_redirect_product_pages()
                             <div>
                                 <h3>
                                     <span class="text">
-                                       # Remove/Reduce Password Security
+                                        # Remove/Reduce Password Security
                                     </span>
                                 </h3>
-                                
+
                                 <p class="topicDesc">
                                     Remove or reduce the password security for your website with the following code. Simplify your website's login process and improve user experience. Implement this code to enhance your website's functionality and optimize your WordPress development process.
                                 </p>
@@ -832,10 +842,10 @@ add_action( 'wp_print_scripts', 'codepress_remove_password_strength', 10 );
                             <div>
                                 <h3>
                                     <span class="text">
-                                       # Get file size
+                                        # Get file size
                                     </span>
                                 </h3>
-                                
+
                                 <p class="topicDesc">
                                     Retrieve the file size when using the Advanced Custom Fields plugin in WordPress with the following code. Enhance your website's functionality and user experience by displaying file size information. Implement this code to optimize your WordPress development process.
                                 </p>
@@ -859,10 +869,10 @@ endwhile;
                             <div>
                                 <h3>
                                     <span class="text">
-                                       # Upload Files from Fronend in wordpress using Ajax
+                                        # Upload Files from Fronend in wordpress using Ajax
                                     </span>
                                 </h3>
-                                
+
                                 <p class="topicDesc">
                                     Allow users to upload files from the frontend of your WordPress website using Ajax with the following code. Improve your website's user experience and functionality by providing a convenient way for users to upload files. Implement this code to optimize your WordPress development process.
                                 </p>
@@ -900,8 +910,8 @@ function file_upload_callback() {
 </code>
                                 </pre>
                                 </span>
-                                
-                                
+
+
 
                                 <span class="function">
                                     <pre class="line-numbers">
@@ -917,8 +927,8 @@ function file_upload_callback() {
 </code>
                                 </pre>
                                 </span>
-                                
-                                
+
+
 
                                 <span class="function">
                                     <pre class="line-numbers">
@@ -955,10 +965,10 @@ jQuery(function($) {
                             <div>
                                 <h3>
                                     <span class="text">
-                                      # Register Custom Post Type
+                                        # Register Custom Post Type
                                     </span>
                                 </h3>
-                                
+
                                 <p class="topicDesc">
                                     Register a custom post type in WordPress with the following code. Customize your website's content and improve user experience by creating unique post types. Implement this code to optimize your WordPress development process and enhance your website's functionality.
                                 </p>
@@ -1001,10 +1011,10 @@ endwhile;
                             <div>
                                 <h3>
                                     <span class="text">
-                                      # Get Post with Pagination using wp-query
+                                        # Get Post with Pagination using wp-query
                                     </span>
                                 </h3>
-                                
+
                                 <p class="topicDesc">
                                     Retrieve posts with pagination using wp-query in WordPress with the following code. Improve your website's navigation and user experience by displaying posts with pagination. Simplify your WordPress development process and enhance your website's functionality with this useful code snippet.
                                 </p>
