@@ -7,58 +7,169 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./assets/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="./assets/style.css" rel="stylesheet">
     <link href="./assets/prism/prism.css" rel="stylesheet">
     <link href="./assets/line-number/line-number.css" rel="stylesheet">
     <script src="./assets/prism/prism.js"></script>
     <script src="./assets/line-number/line-number.js"></script>
 
-    <title>Wordpress Code Snippets | Jagsness</title>
+    <title>Code Snippets | Codepress</title>
 </head>
 
 <body>
 
-    <div class="container-fluid wordpressFunctionAP">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 left">
-                    <div class="inner position-sticky" style="top:10px;">
-                        <ul>
+    <div class="ap_wrapper">
+        <div class="ap_newDesign left" id="sideBar">
+            <div class="inner">
+                <div class="logoBox">
+                    <span>CodePress</span>
+                    <p>Usefull Code Snippets of Wordpress</p>
+                </div>
+                <ul>
+                    <li data-topic="Basic Functions">
+                        <a href="javascript:void(0)" onclick="scrollToSection('aa')">
+                            1. Basic Functions
+                        </a>
+                    </li>
+                    <li data-topic="Get Logo on Frontend">
+                        <a href="javascript:void(0)" onclick="scrollToSection('ab')">
+                            2. Get Logo on Frontend
+                        </a>
+                    </li>
+                    <li data-topic="Get Page Featured Image">
+                        <a href="javascript:void(0)" onclick="scrollToSection('ac')">
+                            3. Get Page Featured Image
+                        </a>
+                    </li>
+                    <li data-topic="Get Blog Lisitng Featured Image">
+                        <a href="javascript:void(0)" onclick="scrollToSection('ad')">
+                            4. Get Blog Lisitng Featured Image
+                        </a>
+                    </li>
+                    <li data-topic="Get Categories on Single Post">
+                        <a href="javascript:void(0)" onclick="scrollToSection('ae')">
+                            5. Get Categories on Single Post
+                        </a>
+                    </li>
+                    <li data-topic="Get Tags on Single Post">
+                        <a href="javascript:void(0)" onclick="scrollToSection('af')">
+                            6. Get Tags on Single Post
+                        </a>
+                    </li>
+                    <li data-topic="Menu Functions">
+                        <a href="javascript:void(0)" onclick="scrollToSection('ag')">
+                            7. Menu Functions
+                        </a>
+                        <ul class="innerItems">
                             <li>
-                                Options
-                            </li>
-                            <li>
-                                <a href="#cmnFunc">
-                                    Common Function
+                                <a href="javascript:void(0)" onclick="scrollToSection('ag1')">
+                                    a. Add Custom Class to 'li' in Menu
                                 </a>
                             </li>
                             <li>
-                                <a href="#func_php">
-                                    For function.php (when you create a theme from scratch )
+                                <a href="javascript:void(0)" onclick="scrollToSection('ag2')">
+                                    b. Add Custom Class to 'menu anchor' in Menu
                                 </a>
                             </li>
                             <li>
-                                <a href="#woocmrc">
-                                    Woocommerce
+                                <a href="javascript:void(0)" onclick="scrollToSection('ag3')">
+                                    c. Override 'Submenu' class in Menu
                                 </a>
                             </li>
                             <li>
-                                <a href="#acf">
-                                    Advanced Custom Fields
+                                <a href="javascript:void(0)" onclick="scrollToSection('ag4')">
+                                    d. Add 'Caret for Submenu' in Menu
                                 </a>
                             </li>
                         </ul>
+                    </li>
+                    <li data-topic="Register Sidebar">
+                        <a href="javascript:void(0)" onclick="scrollToSection('ah')">
+                            8. Register Sidebar
+                        </a>
+                    </li>
+                    <li data-topic="Create Shortcode">
+                        <a href="javascript:void(0)" onclick="scrollToSection('ai')">
+                            9. Create Shortcode
+                        </a>
+                    </li>
+                    <li data-topic="Get Categories & Sub Categories of Posts">
+                        <a href="javascript:void(0)" onclick="scrollToSection('aj')">
+                            10. Get Categories & Sub Categories of Posts
+                        </a>
+                    </li>
+                    <li data-topic="Wocommerce">
+                        <a href="javascript:void(0)" onclick="scrollToSection('ak')">
+                            11. Wocommerce
+                        </a>
+                        <ul class="innerItems">
+                            <li>
+                                <a href="javascript:void(0)" onclick="scrollToSection('ak1')">
+                                    a. Redirect after Login & Registration
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" onclick="scrollToSection('ak2')">
+                                    b. Custom Woocommerce Login
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" onclick="scrollToSection('ak3')">
+                                    b. Custom Woocommerce Login & registration Form
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" onclick="scrollToSection('ak4')">
+                                    c. Logout From Woocommerce
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" onclick="scrollToSection('ak5')">
+                                    d. Remove links of single products from products listing
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" onclick="scrollToSection('ak6')">
+                                    e. Remove/Reduce Password Security
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li data-topic=" Get file size">
+                        <a href="javascript:void(0)" onclick="scrollToSection('al')">
+                            12. Get file size
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="ap_right_box">
+            <div class="inner_box">
+                <div class="ap_breadCrumbs">
+                    <p>
+                        Home > <span id="changeTopic">GettingStarted</span>
+                    </p>
+
+                    <div id="mobileHamburger">
+                        <div class="hamburger" id="hamburger-1">
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-8 right">
+
+                <div class="right">
                     <ul>
 
                         <!--- getting content on front end --->
-                        <li id="cmnFunc">
+                        <li id="aa">
                             <div>
                                 <span class="text">
-                                    Get Basic Things
+                                    # Basic Functions
                                 </span>
 
                                 <span class="function">
@@ -89,31 +200,36 @@ sanitize_title_with_dashes(get_the_title());
 
 //Get Excerpt
 the_excerpt();
+
+//Add theme support of Custom Logo
+add_theme_support( 'custom-logo', $defaults );
+
+//Add theme support of title tag
+add_theme_support( 'title-tag' );
 </code>
                                 </pre>
                                 </span>
                             </div>
                         </li>
-                        <li>
+                        <li id="ab">
                             <div>
                                 <span class="text">
-                                    Get Logo on Frontend
+                                    # Get Logo on Frontend
                                 </span>
 
                                 <span class="function">
                                     <pre class="line-numbers">
 <code class="language-php">$custom_logo_id = get_theme_mod( 'custom_logo' );
 $custom_logo_url = wp_get_attachment_image_url( $custom_logo_id , 'full' );
-echo '&lt;img src="' . esc_url( $custom_logo_url ) . '" alt="Site Logo">';
-endif;</code>
+echo '&lt;img src="' . esc_url( $custom_logo_url ) . '" alt="Site Logo">';</code>
                                 </pre>
                                 </span>
                             </div>
                         </li>
-                        <li>
+                        <li id="ac">
                             <div>
                                 <span class="text">
-                                    Get Page Featured Image
+                                    # Get Page Featured Image
                                 </span>
 
                                 <span class="function">
@@ -126,10 +242,10 @@ endif;</code>
                                 </span>
                             </div>
                         </li>
-                        <li>
+                        <li id="ad">
                             <div>
                                 <span class="text">
-                                    Get Blog Listing Featured Image
+                                    # Get Blog Listing Featured Image
                                 </span>
 
                                 <span class="function">
@@ -143,10 +259,10 @@ endif;</code>
                                 </span>
                             </div>
                         </li>
-                        <li>
+                        <li id="ae">
                             <div>
                                 <span class="text">
-                                    Get categories on single post
+                                    # Get categories on single post
                                 </span>
 
                                 <span class="function">
@@ -163,10 +279,10 @@ foreach ( $terms as $term ) {
                                 </span>
                             </div>
                         </li>
-                        <li>
+                        <li id="af">
                             <div>
                                 <span class="text">
-                                    Get tags on single post
+                                    # Get tags on single post
                                 </span>
 
                                 <span class="function">
@@ -184,48 +300,21 @@ foreach ( $terms as $term ) {
                             </div>
                         </li>
 
-                        <!---- function file code --->
-                        <li id="func_php">
+                        <li id="ag">
                             <div>
                                 <span class="text">
-                                    Add theme support of Custom Logo
-                                </span>
-
-                                <span class="function">
-                                    <pre class="line-numbers">
-<code class="language-php">add_theme_support( 'custom-logo', $defaults );</code>
-                                </pre>
-                                </span>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <span class="text">
-                                    Add theme support of title tag
-                                </span>
-
-                                <span class="function">
-                                    <pre class="line-numbers">
-<code class="language-php">add_theme_support( 'title-tag' );</code>
-                                </pre>
-                                </span>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <span class="text">
-                                    Adding Wordpress Menu
+                                    # Adding Wordpress Menu
                                 </span>
 
                                 <span class="function">
                                     <pre class="line-numbers">
 <code class="language-php">//first need to register menu in function file  
-function register_my_menu() {
+function register_codepress_menu() {
    register_nav_menu('header-menu',__( 'header' ));
    register_nav_menu('footer-menu',__( 'footer' ));
 }
 
-add_action( 'init' , 'register_TM_menu' );
+add_action( 'init' , 'register_codepress_menu' );
 
 // add this code where you want to show your menu  
 wp_nav_menu(
@@ -242,10 +331,10 @@ wp_nav_menu(
                                 </span>
                             </div>
                         </li>
-                        <li>
+                        <li id="ag1">
                             <div>
                                 <span class="text">
-                                    Add class in menu li.
+                                    # Add class in menu li.
                                 </span>
 
                                 <span class="function">
@@ -268,10 +357,10 @@ function add_class_to_menu_list ( $classes, $item, $args, $depth ){
                                 </span>
                             </div>
                         </li>
-                        <li>
+                        <li id="ag2">
                             <div>
                                 <span class="text">
-                                    Add class in menu anchor.
+                                    # Add class in menu anchor.
                                 </span>
 
                                 <span class="function">
@@ -290,10 +379,10 @@ function add_class_to_list_anchor($atts, $item, $args, $depth) {
                                 </span>
                             </div>
                         </li>
-                        <li>
+                        <li id="ag3">
                             <div>
                                 <span class="text">
-                                    Overide Submenu Class
+                                    # Overide Submenu Class
                                 </span>
 
                                 <span class="function">
@@ -311,10 +400,10 @@ function add_sub_menu_class($atts, $args, $depth) {
                                 </span>
                             </div>
                         </li>
-                        <li>
+                        <li id="ag4">
                             <div>
                                 <span class="text">
-                                    Add caret for submenus
+                                    # Add caret for submenus
                                 </span>
 
                                 <span class="function">
@@ -333,10 +422,11 @@ add_filter('walker_nav_menu_start_el', 'aiken_menu_arrow', 10, 4);
                                 </span>
                             </div>
                         </li>
-                        <li>
+
+                        <li id="ah">
                             <div>
                                 <span class="text">
-                                    Register Sidebar
+                                    # Register Sidebar
                                 </span>
 
                                 <span class="function">
@@ -361,10 +451,10 @@ if (is_active_sidebar('mail-widgets')) {
                                 </span>
                             </div>
                         </li>
-                        <li>
+                        <li id="ai">
                             <div>
                                 <span class="text">
-                                    Create Shorcode
+                                    # Create Shorcode
                                 </span>
 
                                 <span class="function">
@@ -386,7 +476,8 @@ add_shortcode( 'shortcode_name' , 'shortcode_function' );
                             </div>
                         </li>
 
-                        <li>
+                        <!--
+                        <li id="aj">
                             <div>
                                 <span class="text">
                                     Get categories of Custom Post
@@ -430,12 +521,13 @@ $categories = get_categories($args);
                                 </span>
                             </div>
                         </li>
+-->
 
                         <!-- for woocommerce pages -->
-                        <li id="woocmrc">
+                        <li id="aj">
                             <div>
                                 <span class="text">
-                                    Get categories and subcategories of post
+                                    # Get categories and subcategories of post
                                 </span>
 
                                 <span class="function">
@@ -462,10 +554,11 @@ echo $html;
                                 </span>
                             </div>
                         </li>
-                        <li>
+
+                        <li id="ak1">
                             <div>
                                 <span class="text">
-                                    Redirect after Login & Registration
+                                    # Redirect after Login & Registration
                                 </span>
 
                                 <span class="function">
@@ -488,10 +581,10 @@ add_action('woocommerce_registration_redirect', 'ap_registration_redirect_wc', 2
                                 </span>
                             </div>
                         </li>
-                        <li>
+                        <li id="ak2">
                             <div>
                                 <span class="text">
-                                    Custom Woocomerce Login
+                                    # Custom Woocomerce Login
                                 </span>
 
                                 <span class="function">
@@ -512,10 +605,10 @@ function jags_separate_login_form() {
                                 </span>
                             </div>
                         </li>
-                        <li>
+                        <li id="ak3">
                             <div>
                                 <span class="text">
-                                    Custom Woocommerce Login & Register Form
+                                    # Custom Woocommerce Login & Register Form
                                 </span>
 
                                 <span class="function">
@@ -527,10 +620,10 @@ https://github.com/chauhan07/custom-login-registration-woocomerce
                                 </span>
                             </div>
                         </li>
-                        <li>
+                        <li id="ak4">
                             <div>
                                 <span class="text">
-                                    Logout from Woocommerce
+                                    # Logout from Woocommerce
                                 </span>
 
                                 <span class="function">
@@ -542,10 +635,10 @@ https://github.com/chauhan07/custom-login-registration-woocomerce
                                 </span>
                             </div>
                         </li>
-                        <li>
+                        <li id="ak5">
                             <div>
                                 <span class="text">
-                                    Remove links of single products from products listing
+                                    # Remove links of single products from products listing
                                 </span>
 
                                 <span class="function">
@@ -569,10 +662,10 @@ function ts_redirect_product_pages()
                                 </span>
                             </div>
                         </li>
-                        <li>
+                        <li id="ak6">
                             <div>
                                 <span class="text">
-                                    Remove/Reduce Password Security
+                                    # Remove/Reduce Password Security
                                 </span>
 
                                 <span class="function">
@@ -596,10 +689,10 @@ add_action( 'wp_print_scripts', 'codepress_remove_password_strength', 10 );
                         </li>
 
                         <!-- ACF Related -->
-                        <li id="acf">
+                        <li id="al">
                             <div>
                                 <span class="text">
-                                    Get file size
+                                    # Get file size
                                 </span>
 
                                 <span class="function">
@@ -621,11 +714,85 @@ endwhile;
                 </div>
             </div>
         </div>
+
+        <div class="copyRightBox">
+            <p>
+                &copy; All Right Reserved &reg; 2023 by
+                <a href="https://github.com/chauhan07/" target="_blank">Aditya Chauhan</a>
+            </p>
+        </div>
+
+        <div class="formButton">
+            <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <img src="./assets/images/contact.png">
+            </a>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <!--modal-dialog-centered , modal-lg-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Contact</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="successMessage">
+                            Your data is successfully submitted
+                        </div>
+                        <form class="ap_form" method="POST" onsubmit="formSubmitFun(event)" name="submit-to-google-sheet" action="https://script.google.com/macros/s/AKfycbyt75q3PLoV36R3aUgmagvqBokoJaXj6mdnlSg9HwIpQ-hOEUOG6Kx3AYpFNv93hmfZDg/exec">
+                            <div class="row">
+                                <div class="col-12">
+                                    <label>
+                                        Name
+                                        <input type="text" class="form-control" required name="Name">
+                                    </label>
+                                </div>
+                                <div class="col-12">
+                                    <label>
+                                        Email
+                                        <input type="email" class="form-control" required name="Email">
+                                    </label>
+                                </div>
+                                <div class="col-12">
+                                    <label>
+                                        Message
+                                        <textarea class="form-control" required name="Message"></textarea>
+                                    </label>
+                                </div>
+                                <div class="col-12">
+                                    <label>
+                                        <input type="submit" class="ap_submit" value="Send Message">
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="ap_loader">
+                                <div class="lds-spinner">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./assets/function.js"></script>
 
 </body>
 
