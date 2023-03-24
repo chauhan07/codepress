@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="icon" type="image/x-icon" href="./assets/images/fav.png">
     <!-- Bootstrap CSS -->
     <link href="./assets/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="./assets/style.css" rel="stylesheet">
@@ -24,7 +24,7 @@
             <div class="inner">
                 <div class="logoBox">
                     <span>CodePress</span>
-                    <p>Usefull Code Snippets of Wordpress</p>
+                    <p>Useful Code Snippets of Wordpress</p>
                 </div>
                 <ul>
                     <li data-topic="Basic Functions">
@@ -136,9 +136,24 @@
                             </li>
                         </ul>
                     </li>
-                    <li data-topic=" Get file size">
+                    <li data-topic="Get file size">
                         <a href="javascript:void(0)" onclick="scrollToSection('al')">
                             12. Get file size
+                        </a>
+                    </li>
+                    <li data-topic="Upload Files from Fronend in wordpress using Ajax">
+                        <a href="javascript:void(0)" onclick="scrollToSection('am')">
+                            13. Upload Files from Fronend in wordpress using Ajax
+                        </a>
+                    </li>
+                    <li data-topic="Register Custom Post">
+                        <a href="javascript:void(0)" onclick="scrollToSection('an')">
+                            13. Register Custom Post
+                        </a>
+                    </li>
+                    <li data-topic="Register Custom Post">
+                        <a href="javascript:void(0)" onclick="scrollToSection('ao')">
+                            14. Get Custom Post using wp-query 
                         </a>
                     </li>
 
@@ -299,7 +314,6 @@ foreach ( $terms as $term ) {
                                 </span>
                             </div>
                         </li>
-
                         <li id="ag">
                             <div>
                                 <span class="text">
@@ -343,11 +357,13 @@ wp_nav_menu(
 add_filter ( 'nav_menu_css_class', 'add_class_to_menu_list', 10, 4 );
 
 function add_class_to_menu_list ( $classes, $item, $args, $depth ){
-    if ($args->theme_location == 'header') { /**** according to theme location *****/
+    if ($args->theme_location == 'header') { 
+    /**** according to theme location *****/
       $classes[] = 'gc-nav-item'; 
     }
     
-    if ($args->theme_location == 'sidebar') { /**** according to theme location *****/
+    if ($args->theme_location == 'sidebar') { 
+    /**** according to theme location *****/
       $classes[] = 'gc-sidebar-item'; 
     }
     return $classes;
@@ -369,7 +385,8 @@ function add_class_to_menu_list ( $classes, $item, $args, $depth ){
 add_filter( 'nav_menu_link_attributes', 'add_class_to_list_anchor', 10, 4 );
 
 function add_class_to_list_anchor($atts, $item, $args, $depth) {
-    if ($args->theme_location == 'header') { /**** according to theme location *****/
+    if ($args->theme_location == 'header') { 
+    /**** according to theme location *****/
         $atts['class'] = "gc-nav-link";
     }
   return $atts;
@@ -391,7 +408,8 @@ function add_class_to_list_anchor($atts, $item, $args, $depth) {
 add_filter( 'nav_menu_submenu_css_class', 'add_sub_menu_class', 10, 4);
 
 function add_sub_menu_class($atts, $args, $depth) {
-    if ($args->theme_location == 'sidebar') { /**** according to theme location *****/
+    if ($args->theme_location == 'sidebar') { 
+    /**** according to theme location *****/
         return array('gc-sidebar-submenu');
     }
 }
@@ -422,7 +440,6 @@ add_filter('walker_nav_menu_start_el', 'aiken_menu_arrow', 10, 4);
                                 </span>
                             </div>
                         </li>
-
                         <li id="ah">
                             <div>
                                 <span class="text">
@@ -475,7 +492,6 @@ add_shortcode( 'shortcode_name' , 'shortcode_function' );
                                 </span>
                             </div>
                         </li>
-
                         <!--
                         <li id="aj">
                             <div>
@@ -523,7 +539,6 @@ $categories = get_categories($args);
                         </li>
 -->
 
-                        <!-- for woocommerce pages -->
                         <li id="aj">
                             <div>
                                 <span class="text">
@@ -554,7 +569,6 @@ echo $html;
                                 </span>
                             </div>
                         </li>
-
                         <li id="ak1">
                             <div>
                                 <span class="text">
@@ -687,8 +701,6 @@ add_action( 'wp_print_scripts', 'codepress_remove_password_strength', 10 );
                                 </span>
                             </div>
                         </li>
-
-                        <!-- ACF Related -->
                         <li id="al">
                             <div>
                                 <span class="text">
@@ -710,11 +722,188 @@ endwhile;
                                 </span>
                             </div>
                         </li>
+                        <li id="am">
+                            <div>
+                                <span class="text">
+                                    # Upload Files from Fronend in wordpress using Ajax
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">//php part put this code in function.php
+function blog_scripts() {
+    // Register the script
+    wp_register_script( 'custom-script', get_stylesheet_directory_uri(). '/js/custom.js', array('jquery'), false, true );
+
+    // Localize the script with new data
+    $script_data_array = array(
+        'ajaxurl' => admin_url( 'admin-ajax.php' ),
+        'security' => wp_create_nonce( 'file_upload' ),
+    );
+    wp_localize_script( 'custom-script', 'blog', $script_data_array );
+
+    // Enqueued script with localized data.
+    wp_enqueue_script( 'custom-script' );
+}
+add_action('wp_enqueue_scripts', 'blog_scripts');
+add_action('wp_ajax_file_upload', 'file_upload_callback');
+add_action('wp_ajax_nopriv_file_upload', 'file_upload_callback');
+
+function file_upload_callback() {
+    check_ajax_referer('file_upload', 'security');
+    $arr_img_ext = array('image/png', 'image/jpeg', 'image/jpg', 'image/gif');
+    if (in_array($_FILES['file']['type'], $arr_img_ext)) {
+        $upload = wp_upload_bits($_FILES["file"]["name"], null, file_get_contents($_FILES["file"]["tmp_name"]));
+        //$upload['url'] will gives you uploaded file path
+    }
+    wp_die();
+}
+</code>
+                                </pre>
+                                </span>
+                                
+                                
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-html">&lt;!-- html part put this code from where you want to upload files to server using ajax---&gt;
+&lt;form class="fileUpload" id="formSubmit_ap" enctype="multipart/form-data"&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label>Choose File:&lt;/label&gt;
+        &lt;input type="file" id="file" accept="image/*" /&gt;
+
+        &lt;input type="submit"&gt;
+    &lt;/div>
+&lt;/form>
+</code>
+                                </pre>
+                                </span>
+                                
+                                
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-js">// js part | put this code in custom.js file which is enqueue using above php script 
+jQuery(function($) {
+    $('#formSubmit_ap').on('submit', function(e) {
+        e.preventDefault();
+        $this = $("#file");
+        var file_data = $("#file").prop('files')[0];
+        var form_data = new FormData();
+        form_data.append('file', file_data);
+        form_data.append('action', 'file_upload');
+        form_data.append('security', blog.security);
+
+        $.ajax({
+            url: blog.ajaxurl,
+            type: 'POST',
+            contentType: false,
+            processData: false,
+            data: form_data,
+            success: function (response) {
+                $this.val('');
+                alert('File uploaded successfully.');
+            }
+        });
+    });
+});
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="an">
+                            <div>
+                                <span class="text">
+                                    # Register Custom Post Type
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">// Register Custom Post
+function codepress_theme_post_types()
+{	
+    register_post_type('media', array(
+        'labels' => array(
+            'name' => 'Media',
+            'add_new_item' => 'Add New Media',
+            'edit_item' => 'Edit Media',
+            'all_items' => 'All Media',
+            'singular_name' => 'Media',
+        ),
+		'public' => true,
+		'publicly_queryable' => true,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'show_in_nav_menus' => true,
+        'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'comments', 'post-formats', 'revisions','excerpt' ),
+		'hierarchical' => false,
+		'has_archive' => 'media',
+		'menu_icon' => 'dashicons-calendar',
+		'taxonomies' => array('media-category'),
+        'rewrite'   => array( 'slug' => false, 'with_front' => false ),  
+		'menu_icon' => 'dashicons-calendar',
+    ));
+}
+add_action('init', 'codepress_theme_post_types');;
+endwhile; 
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="ao">
+                            <div>
+                                <span class="text">
+                                    # Get Post with Pagination using wp-query
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">// WP Query
+$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1; // for pagination
+$args = array(
+'post_type' => 'post',
+'post_status' => 'publish',
+'category_name' => 'media', // category name
+'posts_per_page' => 10,
+'paged' => $paged // for pagination
+
+$arr_posts = new WP_Query( $args );
+    if ( $arr_posts->have_posts() ) :
+        while ( $arr_posts->have_posts() ) :
+            $arr_posts->the_post();
+                echo "items which you want to run in loop";
+        endwhile;
+    endif; 
+wp_reset_postdata();
+
+// for pagination
+$total_pages = $arr_posts->max_num_pages;
+if ($total_pages > 1){
+
+    $current_page = max(1, get_query_var('paged'));
+
+    echo paginate_links(array(
+        'base' => get_pagenum_link(1) . '%_%',
+        'format' => '/page/%#%',
+        'current' => $current_page,
+        'total' => $total_pages,
+        'prev_text'    => __('« prev'),
+        'next_text'    => __('next »'),
+    ));
+}
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
 
+        <!-- Copyright Box -->
         <div class="copyRightBox">
             <p>
                 &copy; All Right Reserved &reg; 2023 by
@@ -722,6 +911,7 @@ endwhile;
             </p>
         </div>
 
+        <!-- Modal Show Button -->
         <div class="formButton">
             <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                 <img src="./assets/images/contact.png">
