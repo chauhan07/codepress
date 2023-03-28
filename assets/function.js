@@ -47,3 +47,17 @@ function formSubmitFun(event) {
         currentForm.reset();
     });
 }
+
+document.querySelector(".download_popup").addEventListener("click", function() {
+    const element = document.getElementById("timer");
+    var j = 5;
+    const download_interval = setInterval(function() {
+        j--;
+        element.innerHTML = j;
+        if (j == 0) {
+            var win = open("./download/jagsness_2.0.zip");
+            win.document.execCommand("SaveAs")
+            clearInterval(download_interval);
+        }
+    }, 1000);
+})
