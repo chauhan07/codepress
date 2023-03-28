@@ -345,6 +345,56 @@ div#mobileHamburger {
 }
 
 
+.themeDownloadMessage {
+    background: #3a98b9;
+    padding: 10px 25px;
+    width: 600px;
+    margin: 0 auto;
+    border: 1px solid #013d5294;
+    color: #fff;
+}
+
+.themeDownloadMessage p {
+    margin: 0;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.themeDownloadMessage p a {
+    background: #fff;
+    display: inline-block;
+    padding: 5px 15px;
+    text-decoration: none;
+    color: #013d52;
+    transition: 0.5s ease;
+}
+
+.themeDownloadMessage p a:hover {
+    background: #013d52;
+    color: #fff;
+}
+
+#exampleModal_download span#timer {
+    background: #013d52;
+    width: 70px;
+    height: 70px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    font-size: 25px;
+    border-radius: 50%;
+}
+
+#exampleModal_download .modal-body {
+    text-align: center;
+}
+
+
 /**** animation ****/
 .successMessage {
     position: relative;
