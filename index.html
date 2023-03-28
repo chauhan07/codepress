@@ -197,6 +197,12 @@
                         </div>
                     </div>
                 </div>
+                
+                <div class="themeDownloadMessage">
+                    <p>
+                        Download a basic Custom Theme from -> <a href="javascript:void(0);" class="download_popup" data-bs-toggle="modal" data-bs-target="#exampleModal_download">Download</a>
+                    </p>
+                </div>
 
                 <div class="right">
                     <ul>
@@ -1299,6 +1305,24 @@ add_filter( 'wpcf7_validate_email*', 'custom_email_validation_filter', 10, 2 );
                                 </div>
                             </div>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal_download" tabindex="-1" aria-labelledby="exampleModalLabel_download" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel_download">Downloading</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Downloading will automatically start in few seconds...</p>
+                        <span id="timer">
+                            5
+                        </span>
                     </div>
                 </div>
             </div>
