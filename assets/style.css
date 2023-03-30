@@ -352,6 +352,7 @@ div#mobileHamburger {
     margin: 0 auto;
     border: 1px solid #013d5294;
     color: #fff;
+    max-width:100%;
 }
 
 .themeDownloadMessage p {
